@@ -50,6 +50,9 @@ public class Order {
     @ManyToMany(targetEntity = Taco.class)
     private List<Taco> tacos = new ArrayList<>();
 
+    @ManyToOne
+    private User user;
+
     @PrePersist
     void placedAt() {
         this.placedAt = new Date();
